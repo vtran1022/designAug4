@@ -11,5 +11,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', router);
 
 app.listen(process.env.PORT, function () {
-  console.log(`Server listening on http://localhost:${PORT}`);
+  console.log(`Server listening on http://localhost:${process.env.PORT}`);
 });
