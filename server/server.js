@@ -8,6 +8,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/', router);
 
 app.listen(process.env.PORT, function () {
   console.log(`Server listening on http://localhost:${PORT}`);
