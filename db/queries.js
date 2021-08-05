@@ -7,7 +7,7 @@ const fetchDogs = () => {
 
 const addDog = (name, breed) => {
   const queryStr = 'INSERT INTO dogs (name, breed) VALUES ($1, $2)';
-  return pool.query(queryStr).then((response) => response);
+  return pool.query(queryStr, [name, breed]).then((response) => response);
 };
 
 module.exports = {
