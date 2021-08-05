@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "server-dev": "nodemon server/server.js",
-    "server-prod": "node server/server.js"
+    "server-prod": "node server/server.js",
+    "test-db": "docker run --rm --name testDB -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres"
   },
   "repository": {
     "type": "git",
