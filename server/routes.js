@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-// router.get();
+router.get('/dogs');
 
-// router.post();
+router.post('/dogs/newdog');
 
 module.exports = router;
