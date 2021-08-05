@@ -3,6 +3,6 @@ const { getDogs, postDog } = require('./controller.js');
 
 router.get('/dogs', getDogs);
 
-router.post('/dogs/newdog', postDog);
+router.post('/dogs', postDog);
 
 module.exports = router;
