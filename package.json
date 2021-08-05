@@ -1,0 +1,21 @@
+{
+  "name": "design-template",
+  "version": "1.0.0",
+  "description": "base design template",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "server-dev": "nodemon server/server.js",
+    "server-prod": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtran1022/designAug4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtran1022/designAug4/issues"
+  },
+  "homepage": "https://github.com/vtran1022/designAug4#readme"
+}
