@@ -8,7 +8,7 @@ const fetchDogs = () => {
   return pool.query(queryStr).then((data) => data.rows);
 };
 
-const fetchADog = (name) => {
+const fetchDog = (name) => {
   const queryStr = `SELECT dog.name, breed.breed
                     FROM (SELECT name, breed_id FROM dogs) AS dog
                     JOIN (SELECT breed, breed_id FROM breeds) AS breed
@@ -34,7 +34,7 @@ const fetchBreeds = () => {
 
 module.exports = {
   fetchDogs,
-  fetchADog,
+  fetchDog,
   addDog,
   fetchBreeds
 };
