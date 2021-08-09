@@ -1,4 +1,4 @@
-const { fetchDogs, fetchADog, addDog } = require('../db/queries.js');
+const { fetchDogs, fetchADog, addDog, fetchBreeds } = require('../db/queries.js');
 
 const getDogs = (req, res) => {
   fetchDogs()
@@ -19,7 +19,7 @@ const getADog = (req, res) => {
 };
 
 const postDog = (req, res) => {
-  addDog(req.body.name, req.body.breed)
+  addDog(req.body.name, req.body.breed_id)
     .then((response) => res.status(200).send(`Successfully added dog! System message:${response}`))
     .catch((err) => {
       res.status(500).send(`Error adding dog: ${err}`);
@@ -27,8 +27,18 @@ const postDog = (req, res) => {
     });
 };
 
+const getBreeds = (req, res) => {
+  fetchBreeds()
+    .then((data) => res.status(200).send(data))
+    .catch((err) => {
+      res.status(500).send(`Error fetching breeds: ${err}`);
+      console.error(`Error fetching breeds: ${err}\n\n${err.stack}`);
+    });
+};
+
 module.exports = {
   getDogs,
   getADog,
-  postDog
+  postDog,
+  getBreeds
 };

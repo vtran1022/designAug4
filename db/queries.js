@@ -27,8 +27,14 @@ const addDog = (name, breed_id) => {
   return pool.query(queryStr, [name, breed_id]).then((response) => response);
 };
 
+const fetchBreeds = () => {
+  const queryStr = 'SELECT * FROM breeds';
+  return pool.query(queryStr).then((data) => data.rows);
+};
+
 module.exports = {
   fetchDogs,
   fetchADog,
-  addDog
+  addDog,
+  fetchBreeds
 };
