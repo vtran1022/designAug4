@@ -6,9 +6,10 @@ CREATE TABLE IF NOT EXISTS breeds (
 CREATE TABLE IF NOT EXISTS dogs (
   dog_id SERIAL PRIMARY KEY,
   name VARCHAR(200) NOT NULL,
+  breed_id SMALLINT NOT NULL,
   CONSTRAINT fk_breeds
-  FOREIGN KEY(breed_id)
-    REFERENCES breeds(id)
+    FOREIGN KEY(breed_id)
+      REFERENCES breeds(breed_id)
 );
 
 /* run docker
