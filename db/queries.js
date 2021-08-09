@@ -22,9 +22,9 @@ const fetchADog = (name) => {
   });
 };
 
-const addDog = (name, breed) => {
-  const queryStr = 'INSERT INTO dogs (name, breed) VALUES ($1, $2)';
-  return pool.query(queryStr, [name, breed]).then((response) => response);
+const addDog = (name, breed_id) => {
+  const queryStr = 'INSERT INTO dogs (name, breed_id) VALUES ($1, $2)';
+  return pool.query(queryStr, [name, breed_id]).then((response) => response);
 };
 
 module.exports = {
